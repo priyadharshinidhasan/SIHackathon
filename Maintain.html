@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance - SterilEase Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <h1>Maintainance</h1>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="maintenance-section">
+            <div class="maintenance-item" onclick="showMaintenanceAlert('BLDC Motor')">
+                <h2>BLDC Motor Maintenance</h2>
+                <p>Regular maintenance of BLDC (Brushless DC) motors is essential to ensure proper functionality.</p>
+                <ul>
+                    <li>Check bearings and lubrication</li>
+                    <li>Inspect electrical connections</li>
+                    <li>Test motor performance</li>
+                </ul>
+                <img src="bldc_motor.jpg" alt="BLDC Motor" class="maintenance-image">
+            </div>
+
+            <div class="maintenance-item" onclick="showMaintenanceAlert('Vacuum Pump')">
+                <h2>Vacuum Pump Maintenance</h2>
+                <p>Ensure the vacuum pump is in optimal condition by performing routine checks.</p>
+                <ul>
+                    <li>Inspect seals and gaskets</li>
+                    <li>Test suction performance</li>
+                    <li>Check fluid levels</li>
+                </ul>
+                <img src="vacuum_pump.jpg" alt="Vacuum Pump" class="maintenance-image">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SterilEase Dashboard | All rights reserved</p>
+    </footer>
+<script>
+    // JavaScript for Maintenance Page (script.js)
+
+// Function to show an alert when a user clicks on a maintenance item
+function showMaintenanceAlert(item) {
+    alert("You clicked on the " + item + " maintenance section. Make sure to follow all the guidelines!");
+}
+
+// Function to add more details (expandable section)
+function showMoreDetails(item) {
+    let details = document.getElementById(item + '-details');
+    if (details.style.display === 'none') {
+        details.style.display = 'block';
+    } else {
+        details.style.display = 'none';
+    }
+}
+
+</script>
+<style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Navigation */
+.navbar {
+    background-color: #2c3e50;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Main Content */
+main {
+    padding: 40px;
+    background-color: white;
+    border: 3px solid #003366; /* Dark Blue Border */
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Maintenance Section */
+.maintenance-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Maintenance Item */
+.maintenance-item {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 2px solid #003366; /* Dark Blue Border for each item */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background for items */
+    cursor: pointer; /* Makes it clear the items are clickable */
+}
+
+.maintenance-item h2 {
+    color: #3498db;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.maintenance-item p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.maintenance-item ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+.maintenance-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .maintenance-item {
+        margin-bottom: 30px;
+    }
+}
+
+</style>
+</body>
+</html>
